@@ -8,32 +8,32 @@ namespace Connect
 {
     class Program
     {
-        private static bool IsXValid(int x)
+        private static bool IsXValid(int XAxis)
         {
-            return  x >= 30 || x < 1;
+            return  XAxis >= 30 || XAxis < 1;
         }
-        private static bool IsYValid(int y)
+        private static bool IsYValid(int YAxis)
         {
-            return y >= 30 || y < 1;
+            return YAxis >= 30 || YAxis < 1;
         }
 
-        public static void DrawBoard(int x, int y)
+        public static void DrawBoard(int XAxis, int YAxis)
         {
             var rows = 0;
-            for (var i = 0; i < x; i++)
+            for (var i = 0; i < XAxis; i++)
             {
                 Console.Write(" |");
-                if (i == x - 1)
+                if (i == XAxis - 1)
                 {
                     Console.WriteLine("");
-                    if (rows == y)
+                    if (rows == YAxis)
                     {
                         break;
                     }
-                    for (var j = 0; j < x; j++)
+                    for (var j = 0; j < XAxis; j++)
                     {
                         Console.Write("-+");
-                        if (j == x - 1)
+                        if (j == XAxis - 1)
                         {
                             Console.WriteLine("-");
                         }
@@ -41,8 +41,7 @@ namespace Connect
                     i = -1;
                     rows++;
                 }
-            }
-           
+            }        
         }
 
         static void Main(string[] args)
